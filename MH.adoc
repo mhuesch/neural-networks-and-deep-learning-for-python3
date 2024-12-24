@@ -8,3 +8,23 @@ $ source env/bin/activate
 
 $ pip install -r requirements.txt
 ----
+
+== running Network (v0, unoptimized)
+
+[source]
+----
+$ source env/bin/activate
+$ python3
+Python 3.11.11 (main, Dec  3 2024, 17:20:40) [GCC 14.2.1 20241116] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import mnist_loader
+>>> training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
+>>> from chapter1_2.Network import *
+#  smaller
+>>> net = Network([784, 30, 10])
+>>> net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+
+# larger
+>>> net = Network([784, 100, 10])
+>>> net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+----
