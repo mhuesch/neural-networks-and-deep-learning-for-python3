@@ -1,0 +1,6 @@
+# Python
+*.pyc
+
+# nix
+.direnv/
+result
