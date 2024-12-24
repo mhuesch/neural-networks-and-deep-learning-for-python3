@@ -13,7 +13,8 @@
             in
             pkgs.mkShell {
               buildInputs = with pkgs; [
-                python311
+                (python311.withPackages(ps: []))
+                python311Packages.pip
               ];
             };
         };
